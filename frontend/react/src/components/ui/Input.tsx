@@ -13,7 +13,7 @@ export function Input(props: {
   return (
     <input
       placeholder={props.label}
-      className={`${borderStyles} bg-gray-700 px-2 py-1 text-lg`}
+      className={`${borderStyles} bg-slate-600 px-2 py-1 text-lg text-white`}
       name={props.name}
       value={props.value}
       onChange={props.onChange}
