@@ -35,21 +35,21 @@ async function savePlayer(player: Player, isEdit: boolean) {
 }
 
 export function PlayerFormView() {
-  const { playerName } = useParams()
+  const { username } = useParams()
   const [player, setPlayer] = useState<Player>()
-  const isEditForm = !!playerName
+  const isEditForm = !!username
   const navigate = useNavigate()
 
   useEffect(() => {
-    loadPlayer(playerName!).then(setPlayer)
-  }, [playerName])
+    loadPlayer(username!).then(setPlayer)
+  }, [username])
 
   return (
     <GridView>
       <GridViewHeader
         title={
           isEditForm
-            ? `Edit player with username: ${playerName}`
+            ? `Edit player with username: ${username}`
             : "Create New Player"
         }
       />
