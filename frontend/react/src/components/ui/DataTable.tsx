@@ -1,3 +1,5 @@
+import { Button } from "./Button"
+
 export type ColumnDefinitionAction<D extends Record<string, any>> = {
   label: string
   type: "EDIT"
@@ -18,11 +20,11 @@ interface Props<D extends Record<any, any>> {
 
 export function DataTable({ columns, data }: Props<any>) {
   return (
-    <table className="w-full table-auto bg-gray-500 rounded">
+    <table className="w-full table-auto rounded">
       <thead className="border-b-2 border-gray-400">
         <tr>
           {columns.map((column, index) => (
-            <th key={index} className="py-3 px-2 text-left">
+            <th key={index} className={`px-2 py-3 text-left`}>
               {column.label}
             </th>
           ))}
@@ -39,13 +41,15 @@ export function DataTable({ columns, data }: Props<any>) {
                   </td>
                 )
               } else {
-                return <td key={columnIndex} >
-                  {
-                    column.actions?.map((action) => (
-                      <button onClick={() => action.onClick(row)}>{action.label}</button>
-                    ))
-                  }
-                </td>
+                return (
+                  <td key={columnIndex} className="flex justify-start">
+                    {column.actions?.map((action) => (
+                      <Button onClick={() => action.onClick(row)}>
+                        {action.label}
+                      </Button>
+                    ))}
+                  </td>
+                )
               }
             })}
           </tr>

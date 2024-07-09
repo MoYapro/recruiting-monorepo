@@ -10,7 +10,7 @@ export function GridView({ children }: Props) {
 
 export function GridViewHeader({ title }: { title: string }) {
   return (
-    <section className="flex items-center bg-gray-600 text-white p-4">
+    <section className="flex items-center bg-gray-600 p-4 text-white">
       <h1 className="text-xl font-bold">{title}</h1>
     </section>
   )
@@ -18,7 +18,7 @@ export function GridViewHeader({ title }: { title: string }) {
 
 export function GridViewContent({ children }: Props) {
   return (
-    <section className="flex-1 overflow-y-auto bg-gray-400 p-4">
+    <section className="flex-1 overflow-y-auto bg-gray-200 p-4">
       {children}
     </section>
   )
@@ -26,6 +26,8 @@ export function GridViewContent({ children }: Props) {
 
 export function GridViewFooter({ children }: Props) {
   return (
-    <section className="flex justify-end items-center bg-gray-600 p-4 gap-2">{children}</section>
+    <section className="flex items-center justify-end gap-2 bg-slate-600 p-4">
+      {children}
+    </section>
   )
 }
