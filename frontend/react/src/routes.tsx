@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
             element: <PlayersGridView />,
           },
           {
-            path: ":playerName/edit",
+            path: ":username/edit",
             element: <PlayerFormView />,
           },
           {

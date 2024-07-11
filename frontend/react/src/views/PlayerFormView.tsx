@@ -72,15 +72,6 @@ function PlayerForm(props: { initial?: Player }) {
   const [email, setEmail] = useState(props.initial?.email)
   const [elo, setElo] = useState(props.initial?.elo)
 
-  useEffect(() => {
-    if (props.initial) {
-      setUsername(props.initial.username)
-      setDisplayName(props.initial.displayName)
-      setEmail(props.initial.email)
-      setElo(props.initial.elo)
-    }
-  }, [props.initial])
-
   const navigate = useNavigate()
 
   const onSubmit = async (e: React.FormEvent) => {
