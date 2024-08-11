@@ -6,3 +6,6 @@
 modules.xml
 
 .DS_Store
+
+/coding_case_*/
+coding_case_*.zip
